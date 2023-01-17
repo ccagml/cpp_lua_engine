@@ -1,3 +1,12 @@
+/*
+ * Filename: https://github.com/ccagml/stunning/src/global_define.hpp
+ * Path: https://github.com/ccagml/stunning/src
+ * Created Date: Tuesday, January 17th 2023, 7:42:05 pm
+ * Author: ccagml
+ *
+ * Copyright (c) 2023 ccagml . All rights reserved
+ */
+
 #ifndef _STUNNING_GLOBAL_DEFINE_H_
 #define _STUNNING_GLOBAL_DEFINE_H_
 

@@ -1,5 +1,11 @@
-// stunning.cpp: 定义应用程序的入口点。
-//
+/*
+ * Filename: https://github.com/ccagml/stunning/src/main.cpp
+ * Path: https://github.com/ccagml/stunning/src
+ * Created Date: Tuesday, January 17th 2023, 7:42:05 pm
+ * Author: ccagml
+ *
+ * Copyright (c) 2023 ccagml . All rights reserved
+ */
 
 #include "main.hpp"
 

@@ -1,3 +1,12 @@
+/*
+ * Filename: https://github.com/ccagml/stunning/src/main_manager.cpp
+ * Path: https://github.com/ccagml/stunning/src
+ * Created Date: Tuesday, January 17th 2023, 7:42:05 pm
+ * Author: ccagml
+ *
+ * Copyright (c) 2023 ccagml . All rights reserved
+ */
+
 #include "main_manager.hpp"
 
 #include <boost/asio.hpp>

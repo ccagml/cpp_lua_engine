@@ -1,3 +1,11 @@
+/*
+ * Filename: https://github.com/ccagml/stunning/src/database_manager.cpp
+ * Path: https://github.com/ccagml/stunning/src
+ * Created Date: Tuesday, January 17th 2023, 7:42:05 pm
+ * Author: ccagml
+ *
+ * Copyright (c) 2023 ccagml . All rights reserved
+ */
 
 #include "database_manager.hpp"
 
@@ -144,7 +152,7 @@ void DatabaseManager::Call(std::shared_ptr<DatabaseExec> sde) {
       if (result == NULL) {
         if (mysql_field_count(mc->conn) == 0) {
           sde->aff_rows = mysql_affected_rows(mc->conn);
-  
+
         } else {
           sde->error_info = std::string(mysql_error(mc->conn));
         }
