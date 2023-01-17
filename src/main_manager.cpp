@@ -62,7 +62,7 @@ RetCode MainManager::Start() {
       sleep_time = 30000;
     }
 
-    boost::this_thread::sleep(boost::posix_time::milliseconds(30000));
+    boost::this_thread::sleep(boost::posix_time::milliseconds(sleep_time));
     std::cin.clear();
     fflush(stdin);
     std::cout << "开始监听";
@@ -76,6 +76,7 @@ RetCode MainManager::Start() {
       con_msg->type = TYPE_CONSOLE;
       con_msg->msg = sss;
       ScriptManager::GetInstance()->AddMsg(con_msg);
+      boost::this_thread::sleep(boost::posix_time::milliseconds(10));
     }
     return 0;
   };
