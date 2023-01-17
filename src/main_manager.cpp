@@ -53,21 +53,33 @@ MsgRecvNum MainManager::Update() {
 RetCode MainManager::Start() {
   NetManager::GetInstance()->Start();
 
-  // boost::function<void(void)> f = [this] {
-  //   while (true) {
-  //     std::string sss;
-  //     getline(std::cin, sss);
+  boost::function<void(void)> f = [this] {
+    std::string cin_wait = "cin_wait";
+    int sleep_time =
+        std::atoi(ConfigManager::GetInstance()->getConfigS(cin_wait).c_str());
+    std::cout << "cin wait" << sleep_time << std::endl;
+    if (sleep_time < 1000) {
+      sleep_time = 30000;
+    }
 
-  //     std::shared_ptr<ScriptMessage> con_msg =
-  //         std::make_shared<ScriptMessage>();
+    boost::this_thread::sleep(boost::posix_time::milliseconds(30000));
+    std::cin.clear();
+    fflush(stdin);
+    std::cout << "开始监听";
+    while (true) {
+      std::string sss;
+      getline(std::cin, sss);
 
-  //     con_msg->type = TYPE_CONSOLE;
-  //     con_msg->msg = sss;
-  //     ScriptManager::GetInstance()->AddMsg(con_msg);
-  //   }
-  //   return 0;
-  // };
-  // boost::asio::post(_console_worker_thread, f);
+      std::shared_ptr<ScriptMessage> con_msg =
+          std::make_shared<ScriptMessage>();
+
+      con_msg->type = TYPE_CONSOLE;
+      con_msg->msg = sss;
+      ScriptManager::GetInstance()->AddMsg(con_msg);
+    }
+    return 0;
+  };
+  boost::asio::post(_console_worker_thread, f);
 
   while (true) {
     // post(g_pool, boost::bind(f, 100));

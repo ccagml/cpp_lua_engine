@@ -93,3 +93,4 @@ libmysql.so.16
 libssl.so.10
 qqwry.dat
 shell/
+jit_so/

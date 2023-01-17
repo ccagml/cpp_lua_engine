@@ -68,11 +68,18 @@ int cpp_send_to_fd(lua_State *L) {
 
   NetSocketId fd = luaL_checkinteger(L, 1);  // First argument
   u_int16_t action_code = luaL_checkinteger(L, 2);
-  std::string str_msg = luaL_checkstring(L, 3);
+  std::string str_msg;
+  if (lua_isstring(L, 3)) {
+    size_t len;
+    const char *subject = lua_tolstring(L, 3, &len);
+    std::string str_msg111(subject, len);
+    str_msg = str_msg111;
+  }
+
   int body_len = str_msg.size() + 6;
   std::vector<uint8_t> myVector(6);
-  myVector[0] = 0;
-  myVector[1] = 0;
+  myVector[0] = body_len;
+  myVector[1] = body_len >> 8;
   myVector[2] = body_len;
   myVector[3] = body_len >> 8;
   myVector[4] = action_code;

@@ -11,9 +11,9 @@
             "MIMode": "gdb",
             "args": [
                 "--config",
-                "config.json",
+                "shell/config.json",
                 "--server_name",
-                "ls"
+                "standalone"
             ],
             "environment": [
                 {
@@ -41,9 +41,9 @@
             "MIMode": "gdb",
             "args": [
                 "--config",
-                "config.json",
+                "shell/config.json",
                 "--server_name",
-                "aaa"
+                "standalone"
             ],
             "environment": [
                 {

@@ -456,11 +456,11 @@ void TcpConnection::do_read() {
             if (cur_read_len == msg_need_len) {
               std::string temp =
                   std::string(buffer_.data() + head_len, body_len - head_len);
-              // std::cout << "读取完整1包了"
-              //           << "魔数" << msg_head->_magic
-              //           << ":长度:" << msg_head->_data_len << ":动作"
-              //           << msg_head->_action << "总长:" << cur_read_len
-              //           << ":内容" << temp << std::endl;
+              std::cout << "读取完整1包了"
+                        << "魔数" << msg_head->_magic
+                        << ":长度:" << msg_head->_data_len << ":动作"
+                        << msg_head->_action << "总长:" << cur_read_len
+                        << ":内容" << temp << std::endl;
 
               std::shared_ptr<ScriptMessage> ss =
                   std::make_shared<ScriptMessage>();
@@ -680,7 +680,7 @@ void WsConnection::do_read() {
 }
 
 void WsConnection::do_write_cache(std::string &msg) {
-  std::string process_data;
+  std::string process_data = "";
   _ws_ptr->makeFrameString(BINARY_FRAME, msg, process_data);
   {
     std::lock_guard<std::mutex> lock(m_mtx);
@@ -835,8 +835,13 @@ void NetManager::accept_loop(std::shared_ptr<boost::asio::ip::tcp::acceptor> a,
 RetCode NetManager::SendMessage(NetSocketId fd, std::string &msg) {
   std::shared_ptr<SocketInfo> ss =
       NetManager::GetInstance()->_socket_id_pool[static_cast<uint32_t>(fd)];
-  ss->_connection_ptr->do_write_cache(msg);
-  return NO_ERROR;
+  if (ss->_connection_ptr != nullptr) {
+    ss->_connection_ptr->do_write_cache(msg);
+    return NO_ERROR;
+  } else {
+    std::cout << "找不到" << fd << std::endl;
+    return 1;
+  }
 }
 
 std::unordered_map<std::string, std::string> NetManager::GetFdInfo(
