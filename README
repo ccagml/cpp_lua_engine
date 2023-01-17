@@ -17,7 +17,7 @@ sudo ./b2 install
 ```
 git clone https://github.com/ccagml/stunning.git
 ```
-
+<!-- git submodule add https://github.com/ccagml/stunning_3rd 3rd -->
 # 2.git submodule 3rd
 ```
 git submodule update
