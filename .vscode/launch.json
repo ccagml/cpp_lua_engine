@@ -1,0 +1,64 @@
+{
+    "version": "2.0.0",
+    "configurations": [
+        {
+            "name": "start",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/stunning",
+            "cwd": "${workspaceFolder}",
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "args": [
+                "--config",
+                "config.json",
+                "--server_name",
+                "ls"
+            ],
+            "environment": [
+                {
+                    "name": "LD_LIBRARY_PATH",
+                    "value": "${LD_LIBRARY_PATH}:${workspaceFolder}/3rd/mysqlcapi/lib:${workspaceFolder}/3rd/lua/lib:${workspaceFolder}/jit_so"
+                },
+            ],
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "build",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/stunning",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "debug_build",
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "args": [
+                "--config",
+                "config.json",
+                "--server_name",
+                "aaa"
+            ],
+            "environment": [
+                {
+                    "name": "LD_LIBRARY_PATH",
+                    "value": "${LD_LIBRARY_PATH}:${workspaceFolder}/3rd/mysqlcapi/lib:${workspaceFolder}/3rd/lua/lib:${workspaceFolder}/jit_so"
+                },
+            ],
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
+}

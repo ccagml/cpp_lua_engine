@@ -1,0 +1,3 @@
+[submodule "3rd"]
+	path = 3rd
+	url = https://github.com/ccagml/stunning_3rd.git

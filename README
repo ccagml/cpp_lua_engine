@@ -1,0 +1,42 @@
+<!-- # 下载boost
+https://boostorg.jfrog.io/artifactory/main/release/1.81.0/source/boost_1_81_0.tar.gz
+cd boost_1_81_0
+
+sudo apt-get update
+sudo apt-get install build-essential g++ python-dev autotools-dev libicu-dev libbz2-dev 
+
+./bootstrap.sh
+./b2
+sudo ./b2 install
+
+
+./z.sh
+ -->
+
+# 1.git clone
+```
+git clone https://github.com/ccagml/stunning.git
+```
+
+# 2.git submodule 3rd
+```
+git submodule update
+```
+
+# 3.download boost1.81.0
+```
+wget https://boostorg.jfrog.io/artifactory/main/release/1.81.0/source/boost_1_81_0.tar.gz
+tar -zxvf boost_1_81_0.tar.gz
+cd boost_1_81_0
+./bootstrap.sh
+./b2
+sudo ./b2 install
+
+```
+
+# 4. cmake
+```
+cmake ./CMakeLists.txt -B build/ -DCMAKE_BUILD_TYPE=Debug
+cd build
+make
+```

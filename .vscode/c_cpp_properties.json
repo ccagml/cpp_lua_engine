@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${default}",
+                "${workspaceFolder}/../boost_1_81_0/",
+                "${workspaceFolder}/3rd/lua/include",
+                "${workspaceFolder}/3rd/mysqlcapi/include",
+            ],
+            "defines": [],
+            "configurationProvider": "ms-vscode.cmake-tools"
+        }
+    ],
+    "version": 4
+}

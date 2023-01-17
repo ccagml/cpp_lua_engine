@@ -1,0 +1,17 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "debug_build",
+            "command": "${workspaceFolder}/z.sh",
+            "args": [
+                "${workspaceFolder}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "detail": "调试器生成的任务。"
+        }
+    ],
+    "version": "2.0.0"
+}
