@@ -45,7 +45,6 @@
 - make
 
 ## 文件目录说明
-eg:
 
 ```
 filetree 
