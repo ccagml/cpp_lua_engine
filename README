@@ -1,43 +1,9 @@
-
-
 # 项目名称
 
 ## cpp_lua_engine 一个 c++ 和lua结合的玩具
 - c++处理网络通信、MySQL相关的操作
 - lua脚本层处理业务逻辑
 
-<!-- PROJECT SHIELDS -->
-
-<!-- [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url] -->
-
-<!-- PROJECT LOGO -->
-<!-- <br />
-
-<p align="center">
-  <h3 align="center">cpp_lua_engine</h3>
-  <p align="center">
- 
-    <br />
-    <a href="https://github.com/ccagml/cpp_lua_engine"><strong>探索本项目的文档 »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/ccagml/cpp_lua_engine">查看Demo</a>
-    ·
-    <a href="https://github.com/ccagml/cpp_lua_engine/issues">报告Bug</a>
-    ·
-    <a href="https://github.com/ccagml/cpp_lua_engine/issues">提出新特性</a>
-  </p>
-
-</p> -->
-
-
- 本篇README.md面向开发者
- 
 ## 目录
 
 - [开发前的配置要求](#开发前的配置要求)
