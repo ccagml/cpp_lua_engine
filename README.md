@@ -22,13 +22,13 @@
 
 ## **安装步骤**
 
-### 克隆本项目
+#### 克隆本项目
 - git clone https://github.com/ccagml/stunning.git
 
-### 加载项目子模块
+#### 加载项目子模块
 - git submodule update
 
-### 下载编译Boost
+#### 下载编译Boost
 - sudo apt-get update
 - sudo apt-get install build-essential g++ python-dev autotools-dev libicu-dev libbz2-dev 
 - wget https://boostorg.jfrog.io/artifactory/main/release/1.81.0/source/boost_1_81_0.tar.gz
@@ -39,12 +39,12 @@
 - sudo ./b2 install
 ### 
 
-### 执行cmake编译项目
+#### 执行cmake编译项目
 - cmake ./CMakeLists.txt -B build/ -DCMAKE_BUILD_TYPE=Debug
 - cd build
 - make
 
-### 文件目录说明
+## 文件目录说明
 eg:
 
 ```
@@ -65,23 +65,23 @@ filetree
 ```
 
 
-### 部署
+## 部署
 
 - ./z.sh
 
-### 使用到的框架
+## 使用到的框架
 
 - [Boost](https://www.boost.org/)
 - [libmysqlclient](https://dev.mysql.com/downloads/c-api/)
 - [LuaJIT](https://luajit.org/)
 
 
-### 版本控制
+## 版本控制
 
 该项目使用Git进行版本管理。您可以在repository参看当前可用版本。
 
 
-### 版权说明
+## 版权说明
 
 该项目签署了MIT 授权许可，详情请参阅 [LICENSE.txt](https://github.com/ccagml/cpp_lua_engine/blob/master/LICENSE.txt)
 
